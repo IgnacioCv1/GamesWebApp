@@ -1,0 +1,15 @@
+<form action="{{ url_for('search_game.search_results') }}" method="post" class="container">
+    <input type="text" name="search_query" placeholder="Search for a game...">
+
+    <div class="filter">
+        <select class="filter-input {{ 'smaller-filter' if not on_homepage else '' }}" name="filter">
+            <option value="all">Title</option>
+            <option value="genre">Genre</option>
+            <option value="publisher">Publisher</option>
+        </select>
+    </div>
+    <div class="search">
+        <i class="gg-search"></i>
+    </div>
+</form>
+

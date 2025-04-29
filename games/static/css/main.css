@@ -1,0 +1,979 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    background: #f6f6f6;
+    display: grid;
+    height: 100%;
+    color: black;
+    overflow-x: hidden;
+}
+
+h3 {
+    text-decoration: underline;
+    padding-bottom: 5px;
+}
+
+h1 {
+    padding-bottom: 20px;
+    padding-left: 250px;
+}
+
+.insideContent {
+    padding-top: 69px;
+}
+
+.gameDescriptionPage {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(to right, #7FFFD4 15%, white 15%, white 85%, #7FFFD4 15%);
+}
+.search-results-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.search-header {
+    padding-top: 95px;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+
+.gallery {
+  padding-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery figure {
+  margin: 0;
+  border: 1px solid #cdcdcd;
+  background: #90EE90;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+}
+.gallery figcaption {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1em;
+  text-align: center;
+  color: black;
+  padding: 5px 10px;
+}
+
+.gameHeader {
+    padding-bottom: 30px;
+    font-family: Arial;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.gameImage {
+    display: grid;
+    place-items: center;
+    padding-bottom: 30px;
+    padding-top: 69px;
+}
+
+.smallInfo {
+    color: black;
+    font-family: Arial;
+    font_size: 9px;
+    text-align: center;
+    padding-bottom: 50px;
+    padding-left: 10px;
+}
+
+.gameDes, .gameReviews {
+    text-align: justify;
+    font-family: Arial;
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-bottom: 50px;
+}
+
+.gameGenres {
+    font-family: Arial;
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.gameReviews p {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.containerGen {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    padding-bottom: 0px;
+    background-color: #90EE90;
+}
+
+/* Nav bar formatting */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+nav {
+    color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.4s ease;
+    padding: 15px 20px;
+    background: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav .nav-content {
+    height: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .logo img {
+    width:250px;
+    height: auto
+}
+
+.nav-content .nav-links {
+    display: flex;
+}
+
+.nav-content .nav-links li {
+    list-style: none;
+    margin: 5px 8px;
+    align-content: normal;
+}
+
+/* The look of the navigation bar links*/
+ .nav-links li a {
+     text-decoration: none;
+     color: black;
+     font-size: 18px;
+     font-weight: 500;
+     padding: 10px 4px;
+     transition: all 0.4s ease;
+}
+
+
+ /* How this looks when you hover over the link */
+ .nav-links li a:hover {
+     color: #04AA6D;
+ }
+
+ .nav-links li a:active(.active) {
+     text-decoration: underline;
+     text-underline-color: green;
+ }
+
+.home {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Style for login page */
+.login-container, .signup-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+input [type="text"],
+input [type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+}
+
+button {
+    color: blue;
+    background-color: #dddddd;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.form-control {
+    display: block; /* Make the element a block-level element */
+    width: 100%; /* Take up the full width of its container */
+    padding: 10px; /* Add padding to the element */
+    font-size: 14px; /* Set the font size */
+    line-height: 1.5; /* Set the line height */
+    color: #333; /* Set the text color */
+    background-color: #fff; /* Set the background color */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 4px; /* Add rounded corners */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Add smooth transition effects */
+}
+
+
+.form-control:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: 0; /* Remove the default outline */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Add a box shadow on focus */
+}
+
+
+.form-control:disabled {
+    background-color: #f8f9fa; /* Change background color for disabled elements */
+    cursor: not-allowed; /* Change cursor style */
+}
+
+.box-padding {
+    padding: 10px;
+}
+
+.custom-button:focus,
+.custom-button:hover {
+    outline: none;
+    background: lightblue;
+    border: none;
+}
+
+/* Styles for favourites toggle button */
+        /* Style for the star-shaped checkbox */
+        .star-checkbox {
+            display: none; /* Hide the actual checkbox */
+        }
+
+        .star-label {
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            clip-path: polygon(
+                50% 0%,
+                61.8% 35.3%,
+                98.2% 35.3%,
+                68.2% 57.3%,
+                79.1% 91.2%,
+                50% 70.5%,
+                20.9% 91.2%,
+                31.8% 57.3%,
+                1.8% 35.3%,
+                38.2% 35.3%
+            );
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        /* Style for the checked (favorite) state */
+        .star-checkbox:checked + .star-label {
+            background: gold;
+        }
+
+        /* Style for the unchecked state */
+        .star-label::before {
+            content: '\2606'; /* Unicode for empty star */
+            color: gray;
+            display: block;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        /* Style for the favorite (star-filled) state */
+        .favorite .star-label::before {
+            content: '\2605'; /* Unicode for filled star */
+            color: gold;
+        }
+
+/* Styles for the pagination links */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Styles for the pagination links */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Styles for the pagination links */
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.pagination li {
+    margin: 0 3px;
+}
+
+.pagination a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+.pagination a:hover {
+    background-color: #f5f5f5;
+}
+
+.pagination .active a {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
++* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  height: 100px;
+}
+
+.container input[type="text"] {
+  font-family: 'Gill Sans';
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: white;
+  color: black;
+  text-shadow: 0 0 10px white;
+  padding: 0 80px 0 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 25px 0 white,
+              0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  transition: all 1s;
+  opacity: 0;
+  z-index: 5;
+  font-weight: bolder;
+  letter-spacing: 0.1em;
+}
+
+.container input[type="text"]:hover {
+  cursor: pointer;
+}
+
+.container input[type="text"]:focus {
+  width: 300px;
+  opacity: 1;
+  cursor: text;
+}
+
+.container input[type="text"]::placeholder {
+  color: white;
+  opacity: 0.5;
+  font-weight: bolder;
+}
+
+.container input[type="submit"] {
+  display: none; /* Hides the submit button */
+}
+
+
+.container .search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 40px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: black;
+  border-radius: 50%;
+  transition: all 1s;
+  z-index: 4;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+  :hover {
+    cursor: pointer;
+  }
+  ::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: 22px;
+    right: 0;
+    bottom: 0;
+    left: 22px;
+    width: 12px;
+    height: 2px;
+    background: white;
+    transform: rotate(45deg);
+    transition: all .5s;
+  }
+  ::after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: -5px;
+    right: 0;
+    bottom: 0;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: all .5s;
+  }
+}
+
+.container input:focus ~ .search {
+  right: -250px;
+  background: #151515;
+  z-index: 6;
+  ::before {
+    top: 0;
+    left: 0;
+    width: 25px;
+  }
+  ::after {
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    border: none;
+    background: white;
+    border-radius: 0%;
+    transform: rotate(-45deg);
+  }
+}
+
+.smaller-search-bar input[type="text"] {
+    width: 200px;  /* Adjust to your desired size */
+    height: 40px;  /* Adjust to your desired height */
+    padding: 0 20px;  /* Adjust padding if needed */
+}
+
+.not-homepage .container .search {
+    width: 60px;      /* Adjust to your desired width */
+    height: 60px;     /* Adjust to your desired height */
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+    /* Add other styles or override existing ones as needed */
+}
+
+.not-homepage .container .search::before {
+    width: 10px; /* Adjust width as desired */
+    /* If you want to adjust the height, which is the thickness of the line */
+    height: 2px; /* Adjust height as desired */
+    /* You might also need to adjust the top and left properties to keep the icon centered */
+    top: 20px; /* Example adjustment */
+    left: 20px; /* Example adjustment */
+}
+
+.not-homepage .container .search::after {
+    /* Adjusting the width of the circle part of the search icon */
+    width: 20px; /* Adjust width as desired */
+    /* Adjusting the height of the circle part of the search icon */
+    height: 20px; /* Adjust height as desired */
+    /* You might also need to adjust the border thickness if you change the circle size */
+    border: 3px solid white; /* Adjust border as desired */
+    /* And possibly the top and left properties to keep it centered */
+    top: -3px; /* Example adjustment */
+    left: -3px; /* Example adjustment */
+}
+
+.container .filter-input {
+    font-family: 'Gill Sans';
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    margin: auto;
+    top: 125px; /* adjusted for filter */
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 300px; /* set it to the expanded width */
+    height: 50px;
+    outline: none;
+    border: none;
+    background: white;
+    color: black;
+    text-shadow: 0 0 10px white;
+    padding: 0 80px 0 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 25px 0 white,
+                0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    opacity: 1; /* make it always visible */
+    z-index: 5;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+}
+
+.container .filter-input::placeholder {
+    color: white;
+    opacity: 0.5;
+    font-weight: bolder;
+}
+
+.navbar .filter-input {
+    font-family: 'Gill Sans';
+    font-weight: bold;
+    font-size: 14px; /* reduced font size */
+    position: relative; /* changed to relative */
+    width: 150px; /* reduced width */
+    height: 30px; /* reduced height */
+    outline: none;
+    border: 1px solid #ccc; /* added subtle border */
+    background: white;
+    color: black;
+    padding: 0 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    opacity: 1; /* make it always visible */
+    margin-left: 10px; /* space it a bit from the search bar */
+}
+
+.navbar .filter-input::placeholder {
+    color: #888;
+    font-weight: normal;
+}
+
+.navbar .filter-input:focus {
+    border-color: #007bff; /* highlight when focused */
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.site-logo {
+    margin-bottom: 20px;
+    position: relative;
+    top: -165px;  /* moves up by 10 pixels */
+    left: -300px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.logo-and-search-container {
+    display: flex;
+    flex-direction: column; /* stack child elements vertically */
+    align-items: center; /* vertically center, if needed */
+}
+
+.logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    position: relative;
+    top: -375px;  /* adjust as needed */
+    left: 70px;  /* adjust as needed */
+    font-size: 18px;
+    color: #333; /* adjust color as needed */
+}
+
+
+
+
+.comment-container
+{
+    width: 600px;
+    border: 2px solid #333;
+    padding: 15px 10px;
+}
+.comment-container h2
+{
+    text-align: center;
+    margin-bottom: 25px
+}
+textarea
+{
+    height: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #aaa;
+    background-color: transparent;
+    margin-bottom: 10px;
+    resize: none;
+    outline: none;
+    transition: .5s
+}
+
+input[type="submit"], button
+{
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+input[type="submit"]
+{
+    color: #fff;
+    background-color: #273c75
+}
+
+.comment {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid #e1e1e1;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #007BFF;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.user-info {  /* New style for the added container */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 10px;  /* Control the distance between username/rating and the comment here */
+    margin-top: 5px;
+}
+
+.username {
+    font-weight: bold;
+    margin-bottom: 5px; /* Adjust this to control the space between the username and the rating */
+    font-size: 1.1em;
+    position: relative;
+}
+
+.rating {
+    font-size: 0.7em;
+    color: #777;
+    /* Remove position, bottom, and left properties */
+}
+
+
+.user-comment {
+    flex: 1; /* Take up the remaining width */
+    position: relative;
+    margin-top: 5px;
+}
+
+.user-comment p {
+    margin: 10;
+    padding: 0;
+}
+
+.user-comment span {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.8em;
+    color: #777;
+}
+
+.star-rating {
+    font-size: 24px; /* Adjust as needed */
+    color: #d4d4d4; /* Default color for stars (you can set to whatever you prefer) */
+    display: inline-flex; /* So stars line up in a row */
+    align-items: center;
+    justify-content: center;
+}
+
+.star.filled {
+    color: gold; /* Adjust to your preferred filled color */
+
+}
+
+.star.half {
+    position: relative;  /* We make this relative so the ::after pseudo-element is positioned relative to this */
+    color: gold;
+}
+
+.star {
+    color: #d4d4d4; /* or any other color you want for the empty star */
+
+}
+
+.star.half::after {
+    content: "\2605"; /* Unicode for filled star */
+    position: absolute;
+    left: 0;
+    color: gold; /* Adjust to your preferred filled color */
+    clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%); /* This clips the right half of the star */
+    z-index: 1;
+}
+
+.rating-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  /* stack children vertically */
+    margin-bottom: 25px;
+}
+
+
+/* Style the dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style the button that triggers the dropdown */
+.dropbtn {
+    background-color: #0056b3;
+    color: white;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Style the dropdown menu content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change the color of the links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover.dropbtn {
+    background-color: #0056b3;
+}
+.nav-links.custom-button {
+    width: 100%;
+}
+
+#user-profile {
+    width: 25%;
+    margin: auto;
+    margin-top: 20px; /* Adjusted for spacing below the nav bar */
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+    min-height: 150px; /* Set a min-height */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#user-profile h2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.profile-username {
+    color: #0056b3; /* You can choose any color */
+    font-size: 2em; /* Adjust the size as you prefer */
+    font-weight: bold; /* Making the font bold */
+    text-shadow: 2px 2px 2px #ccc; /* Optional: Adding a subtle shadow for a bit of depth */
+    text-transform: uppercase;
+}
+
+#review-list {
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+    min-height: 150px; /* Set a min-height */
+    overflow-y: auto; /* Set overflow for long lists */
+    max-height: 500px; /* Set max height */
+}
+
+#review-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#review-list li {
+    margin-bottom: 20px;
+}
+
+#review-list li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start; /* Align items to the start of the flex container */
+}
+
+#review-list img {
+    border-radius: 8px; /* Optional: for rounded corners on the image */
+    max-width: 150px; /* Adjust as needed */
+    margin-right: 20px;
+}
+
+#review-list h3 {
+    margin-bottom: 10px;
+}
+
+.comment-box {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* For rounded corners */
+    background-color: #f9f9f9;
+    width: 100%; /* Take the remaining width */
+    box-sizing: border-box;
+}
+
+#fav-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Define column size and make it responsive */
+    gap: 20px; /* Adjust gap as needed */
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
+    min-height: 150px;
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+#fav-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#fav-list li {
+    border-radius: 8px; /* Optional: for rounded corners */
+    overflow: hidden; /* Ensure that the image is contained within the border-radius */
+    position: relative; /* Set to relative to position the title over the image */
+}
+
+#fav-list img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    transition: transform .2s ease-in-out; /* Optional: for hover effect */
+}
+
+
+#fav-list li:hover img {
+    transform: scale(1.1); /* Optional: zoom effect on hover */
+}
+
+/* Add this CSS to style flashed messages */
+.flashes {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+.flashes li {
+    color: #fff;
+    background-color: #007bff; /* Adjust the background color as needed */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Style for success message */
+.flashes .success {
+    background-color: #28a745; /* Adjust the background color for success messages */
+}
+
+/* Style for error message */
+.flashes .error {
+    background-color: #dc3545; /* Adjust the background color for error messages */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

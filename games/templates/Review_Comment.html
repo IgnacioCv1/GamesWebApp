@@ -1,0 +1,19 @@
+{% if game.game_reviews %}
+  {% for review in game.game_reviews %}
+      {% if review.comment|length > 0 %}
+        <div class="comment">
+          <div class="profile-image">
+            <p id="name">{{ review.user.username[0]| upper }}</p>  {# Assuming user object has a 'username' attribute #}
+          </div>
+          <div class="user-info">
+            <div class="username">@{{ review.user.username }}</div>
+            <div class="rating">Rating: {{ review.rating }}</div>  {# Accessing the rating of the review #}
+          </div>
+          <div class="user-comment">
+            <p>{{ review.comment }}</p>  {# Accessing the comment of the review #}
+          </div>
+        </div>
+      {% endif %}
+  {% endfor %}
+{% endif %}
+

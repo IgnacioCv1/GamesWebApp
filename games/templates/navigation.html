@@ -1,0 +1,29 @@
+<nav>
+    <div class="nav-content">
+        <div class="logo">
+            <a href=""><img src="{{ url_for('static', filename='css/logo.png') }}"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home_page') }}">Home&nbsp</a></li>
+            <li><a href="{{ url_for('games_bp.browse_games') }}">All Games&nbsp</a></li>
+            {% if not on_homepage and request.endpoint != 'profile_bp.profile' %}
+            <li class="{{ 'smaller-search-bar' }}">
+                {% include 'Search.html' %}
+            </li>
+            {% endif %}
+            {% if 'username' not in session %}
+                <li class="custom-button"> <a href="{{ url_for('login_page.login') }}"> Login </a> </li>
+            {% else %}
+                 <div class="dropdown">
+                     <button class="dropbtn">{{ session['username'] }}</button>
+                     <div class="dropdown-content">
+                        <a href="{{ url_for('profile_bp.profile', username=session['username']) }}">My Profile</a>
+                        <form method="POST" action="{{ url_for('login_page.logout') }}">
+                            <input type="submit" value="Logout" class="nav-links custom-button">
+                        </form>
+                    </div>
+                </div>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <meta name="Game Library Login" content="width=device-width">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css"/>
+</head>
+<body>
+<div class="login-container">
+    <h1 style="padding-left: 0px">Login Page</h1>
+
+    <!-- Renders the Flask-WTF login form -->
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <!-- deals with the username -->
+        <div class="box-padding">
+            {{ form.username.label }}
+            {{ form.username(class="form-control", placeholder="Username") }}
+        </div>
+        <!-- deals with the password -->
+        <div class="box-padding">
+            {{ form.password.label }}
+            {{ form.password(class="form-control", placeholder="Password") }}
+        </div>
+        <button type="Submit" style="margin: 10px;">Login</button>
+    </form>
+
+    <!-- Display flash messages -->
+    <ul class="flashes">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </ul>
+
+    <p>Don't have an account? <a href="{{ url_for('signup_page.signup') }}">Sign up here.</a></p>
+</div>
+</body>
+</html>

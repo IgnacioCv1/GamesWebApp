@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home Page</title>
+        <meta name="Game Library" content="width=device-width">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css"/>
+    </head>
+    <body>
+
+    <div class="container">
+        <img src="{{ url_for('static', filename='css/logo.png') }}" alt="Site Logo" class="site-logo">
+
+        <p class="logo-text">ICOR581 - AHAR466 - JLEE643</p>
+        <p class="logo-text"; style="margin-top: 450px; margin-left: -115px;">a game library platform where users can browse and review various games, view their profiles showcasing their reviews and favorite games, and search for games.</p>
+
+    </div>
+    <div>
+        {% set active_item = 'home' %}
+        {% include 'navigation.html' %}
+        {% include 'Search.html' %}
+    </div>
+
+    <!-- To include homepage functions, html, and css -->
+    </body>
+</html>

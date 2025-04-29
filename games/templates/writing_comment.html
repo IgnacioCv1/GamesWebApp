@@ -1,0 +1,28 @@
+<div>
+    <h2 style="margin-top: 20px; margin-bottom: 10px;">Leave a Review</h2>
+
+    {% with messages = get_flashed_messages(category_filter=['review_error']) %}
+        {% if messages %}
+            {% for message in messages %}
+                <div style="color: red; font-weight: bold;">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('search_game.add_comment', game_title=game.game_title) }}">
+        <textarea name="comment_content" placeholder='Add Your Comment'></textarea>
+        <label for="rating">Rate the Game: </label>
+        <select name="rating" id="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <div class="btn">
+        <input type="submit" value='Review'>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,7 @@
+pytest
+Flask==2.3.2
+SQLAlchemy==1.4.41
+passlib
+flask_wtf
+wtforms
+python-dotenv

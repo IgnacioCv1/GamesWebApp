@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <meta name="Game Library" content="width=device-width">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css"/>
+</head>
+<body class="not-homepage">
+    <div>
+        {% include 'navigation.html' %}
+    </div>
+    <div style="padding-top: 55px;"></div>
+    <div id="profile-container">
+        <div id="user-profile">
+            <h2 class="profile-username">{{ username }}'s Profile</h2>
+        </div>
+        <div id="review-list">
+            <h3>Reviewed Games</h3>
+            <ul>
+                {% for game, review in games_reviews_list %}
+                    <li>
+                        <img src="{{ game.image_url }}" alt="{{ game.game_name }}">
+                        <div>
+                            <h4 style="text-align: left;">{{ game.title }}</h4>
+                            <div>
+                                <p style="font-size: 13px; text-align: left; font-weight: bold;">Rating: {{ review.rating }}</p>
+                            </div>
+                            <div class="comment-box">
+                                <p>{{ review.comment }}</p>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="review-list">
+            <h3>Favorite Games</h3>
+            <ul>
+                {% for game in fav_games %}
+                    <li>
+                        <img src="{{ game.image_url }}" alt="{{ game.game_name }}">
+                        <div>
+                            <h3>{{ game.title }}</h3>
+                            <div class="comment-box">
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Description</title>
+    <meta name="Game Description" content="width=device-width">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css"/>
+</head>
+<body class ="gameDescriptionPage not-homepage">
+
+    {% include 'navigation.html' %}
+
+    <div class="gameImage">
+        <img src="{{ game.game_img }}" style="width:100vw; height: auto;">
+    </div>
+
+    <div class="insideContent">
+        <div>
+            <div class="gameHeader">
+                <h2>{{ game.game_title }}</h2>
+                <form method="POST" action="/add_fav">
+                  <input type="hidden" name="game_id" value="{{ game.game_id }}">
+                  <input type="hidden" name="is_favorite" value="{% if game.game_id in session['favorites'] %}true{% else %}false{% endif %}">
+                  <button type="submit">
+                    {% if game.game_id in session['favorites'] %}
+                      Remove from Favorites
+                    {% else %}
+                      Add to Favorites
+                    {% endif %}
+                  </button>
+                </form>
+            </div>
+            <div class="smallInfo" style="padding-bottom: 5px">
+                <p><strong>Publisher: </strong>{{ game.game_publisher }}</p>
+            </div>
+            <div class="rating-wrap">
+                <div class="smallInfo">
+                   <p>Price: ${{ game.game_price }}&nbsp || &nbspRelease Date: {{ game.game_release }}</p></p>
+                </div>
+                <P>Average Rating: {{ avg_stars }}</P>
+                <div class="star-rating">
+                        {% for full_star in range(full_stars) %}
+                            <span class="star filled">&#9733;</span>
+                        {% endfor %}
+
+                        {% for half in range(half_star) %}
+                            <span class="star half">&#9734;</span> {# You can use the same unfilled star; CSS will make it half-filled #}
+                        {% endfor %}
+
+                        {% for empty_star in range(empty_stars) %}
+                            <span class="star">&#9734;</span>
+                        {% endfor %}
+
+                        {% if avg_stars == 0 %}
+                            {% for empty_star in range(5) %}
+                                <span class="star">&#9734;</span>
+                            {% endfor %}
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="gameDes">
+            <div class="containerGen">
+                <div class="gameGenres">
+                    <h3 style="padding-top: 10px;">Genres: </h3>
+                    {% for genre in game.game_genres %}
+                        {% if not loop.last %}
+                            {{ genre }},
+                        {% else %}
+                            {{ genre }}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <h3 style="padding-top: 50px;"><strong>Description:</strong></h3>
+            <div>
+                <p>
+                {{ game.game_des }}
+                </p>
+            </div>
+            <div>
+                {% include 'writing_comment.html' %}
+                {% if game.game_reviews %}
+                    {% include 'Review_Comment.html'%}
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

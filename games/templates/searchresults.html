@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Search Results</title>
+        <meta name="Search Results" content="width=device-width">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css"/>
+    </head>
+    <body class="not-homepage">
+        <div>
+            {% set active_item="searchResults" %}
+            {% include 'navigation.html' %}
+        </div>
+        <div class="insideContent">
+            <div>
+                {% include 'navigation.html' %}
+            </div>
+            <div class="search-results-container">
+                {% if not games %}
+                <h1 class="search-header">Search Result(s): Not Found</h1>
+                {% endif %}
+                <div class="gallery">
+                {% for game in games %}
+                    <figure>
+                        <a href="{{ url_for('game_des.game_description', game_title=game['game_title']) }}"><img src="{{ game.game_img }}" alt="#"></a>
+                        <figcaption><strong>{{ game.game_title }}<br>========================</strong></figcaption>
+                        <figcaption>Price: ${{ game.game_price }}</figcaption>
+                        <figcaption>Release Date: {{ game.game_release }}</figcaption>
+                    </figure>
+                {% endfor %}
+
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

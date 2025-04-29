@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home Page</title>
+        <meta name="Game Library" content="width=device-width">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" type="text/css"/>
+    </head>
+    <body class = "not-homepage">
+    <div>
+        {% include 'navigation.html' %}
+    </div>
+        <div class="insideContent">
+            <div>
+                {% include 'navigation.html' %}
+            </div>
+            <div style="padding-top: 20px;">
+                <h1>Browse All Games:</h1>
+            </div>
+            <div class="gallery">
+                {% for game in games %}
+                    <figure>
+                        <a href="{{ url_for('game_des.game_description', game_title=game.game_title) }}"><img src="{{ game.game_img }}" alt="#"></a>
+                        <figcaption><strong>{{ game.game_title }}<br>========================</strong></figcaption>
+                        <figcaption>Price: ${{ game.game_price }}</figcaption>
+                        <figcaption>Release Date: {{ game.game_release }}</figcaption>
+                    </figure>
+                {% endfor %}
+
+            <div class="pagination-container">
+                <ul class="pagination">
+                    {% if current_page > 1 %}
+                        <li><a href="?page={{ current_page - 1 }}">Previous</a></li>
+                    {% endif %}
+
+                    {% if current_page > 4 %}
+                        <li><a href="?page=1">1</a></li>
+                        {% if current_page > 5 %}
+                            <li>...</li>
+                        {% endif %}
+                    {% endif %}
+
+                    {% for page_num in page_range %}
+                        <li{% if page_num == current_page %} class="active"{% endif %}><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+                    {% endfor %}
+
+                    {% if current_page < total_pages - 3 %}
+                        {% if current_page < total_pages - 4 %}
+                            <li>...</li>
+                        {% endif %}
+                        <li><a href="?page={{ total_pages }}">{{ total_pages }}</a></li>
+                    {% endif %}
+
+                    {% if current_page < total_pages %}
+                        <li><a href="?page={{ current_page + 1 }}">Next</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>
